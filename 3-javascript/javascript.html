@@ -1,41 +1,45 @@
 <html>
     <head>
         <title>Javascript</title>
+        
+        <style type="text/css">
+        
+            .circle {
+                width: 30vw;
+                height: 30vw;
+                border-radius: 100%;
+                float: left;
+                margin: 1vw;
+                
+            }
+            
+            #blue-circle { background-color: blue; }
+            #red-circle { background-color: red; }
+            #green-circle { background-color: green; }
+        
+        </style>
+        
     </head>
     <body>
         
-        <p id="text">Hello World!</p>
+        <div id="red-circle" class="circle"></div>
         
-        <button id="myButton">Change text</button>
+        <div id="blue-circle" class="circle"></div>
         
-        <p id="secondParagraph">JavaScript is ... </p>
-                
-        <button id="appendText">Change text</button>
-        
-        <p id="emptyParagraph"></p>
-        
-        <button id="addToEmpty">Add text</button>
-        
-        <p id="moreText">This is some text</p>
-        
-        <button id="styleText">Style Text</button>
+        <div id="green-circle" class="circle"></div>
         
         <script type="text/javascript">
             
-            document.getElementById("myButton").onclick = function() {
-                document.getElementById("text").innerHTML = "Hello Frank!";
+            document.getElementById("red-circle").onclick = function() {
+                document.getElementById("red-circle").style.display = "none";
             }
             
-            document.getElementById("appendText").onclick = function() {
-                document.getElementById("secondParagraph").innerHTML = "I think " + document.getElementById("secondParagraph").innerHTML + "Awesome!!!";
+            document.getElementById("blue-circle").onclick = function() {
+                document.getElementById("blue-circle").style.display = "none";
             }
             
-            document.getElementById("addToEmpty").onclick = function() {
-                document.getElementById("emptyParagraph").innerHTML = "Frank is pretty great!";
-            }
-            
-            document.getElementById("styleText").onclick = function() {
-                document.getElementById("moreText").style.display = "none";
+            document.getElementById("green-circle").onclick = function() {
+                document.getElementById("green-circle").style.display = "none";
             }
             
         </script>
