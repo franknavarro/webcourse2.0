@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Finger Game</title>
+    </head>
+    <body>
+        
+        <p>Guess how many fingers am I holding up?</p>
+        <input id="guessValue" type="text">
+        <button id="checkFingers">Guess</button>
+        
+        <p>Guess Count: <span id="guessCount">0</span></p>
+        
+        <script type="text/javascript">
+            
+            var fingerValue = Math.floor(Math.random() * 6);
+            var guessCount = 0;
+            console.log("Psssst.... The answer is " + fingerValue);
+            
+            document.getElementById("checkFingers").onclick = function() {
+                var guessValue = document.getElementById("guessValue").value;
+                
+                guessCount++;
+                document.getElementById("guessCount").innerHTML = guessCount;
+    
+                
+                if (guessValue == fingerValue) {
+                    alert("You're right! And it only took you " + guessCount + " guesses. Not to shabby.");
+                    location.reload(true);
+                } else {
+                    alert("Nope! Gotcha! Try Again!")
+                }
+                
+            }
+            
+        </script>
+    </body>
+</html>
