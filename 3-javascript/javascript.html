@@ -7,20 +7,33 @@
     </head>
     <body>
         
-        <input type="text" id="textInput">
         
-        <button id="changeText">Change the text!!!</button>
-        
-        <p id="paragraphChange">Some random text here...</p>
         
         <script type="text/javascript">
             
-            document.getElementById("changeText").onclick = function() {
-                var textEntered = "";
-                textEntered = document.getElementById("textInput").value;
-                
-                document.getElementById("paragraphChange").innerHTML = textEntered;
-            }
+            var myArray = new Array();
+            
+            myArray[0] = "pizza";
+            myArray[1] = "chocolate";
+            
+            var tweets = ["Morning everybody!", "I love coffee"];
+            
+            tweets.push("Back to work!");
+            
+            //Delete Item in Array 
+            // array.splice(startAtItemNumber, DeleteThisManyItems)
+            tweets.splice(1, 2);
+            
+            //Add Item in middle of Array
+            // array.splice(startAtItemNumber, DeleteThisManyItems, WhatToAdd)
+            tweets.splice(1, 0, "Corflakes for breakfast");
+            
+            //Delete and Add Items to an array
+            tweets.splice(1, 1, "Corflakes for breakfast", "num num");
+                        
+            console.log(tweets);
+            
+            console.log(myArray.length);
             
         </script>
     </body>
