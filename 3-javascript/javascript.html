@@ -8,10 +8,26 @@
         
         <button id="myButton">Change text</button>
         
+        <p id="secondParagraph">JavaScript is ... </p>
+                
+        <button id="appendText">Change text</button>
+        
+        <p id="emptyParagraph"></p>
+        
+        <button id="addToEmpty">Add text</button>
+        
         <script type="text/javascript">
             
             document.getElementById("myButton").onclick = function() {
                 document.getElementById("text").innerHTML = "Hello Frank!";
+            }
+            
+            document.getElementById("appendText").onclick = function() {
+                document.getElementById("secondParagraph").innerHTML = "I think " + document.getElementById("secondParagraph").innerHTML + "Awesome!!!";
+            }
+            
+            document.getElementById("addToEmpty").onclick = function() {
+                document.getElementById("emptyParagraph").innerHTML = "Frank is pretty great!";
             }
             
         </script>
