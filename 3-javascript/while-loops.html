@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Javascript</title>  
+    </head>
+    <body>
+        
+        <!-- Get users value -->
+        <p>How many fingers are you holding up?</p>
+        <select id="actualValue">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <button id="checkFingers">Tell</button>
+        
+        <!-- Show computers guess count -->
+        <p>Guess Count: <span id="guessCount">0</span></p>
+        
+        <!--Show all computer's guesses -->
+        <div id="allGuesses"></div>
+        
+        <script type="text/javascript">
+           
+            //The user has told the computer how many fingers they are holding up
+            document.getElementById("checkFingers").onclick = function () {
+                
+                //The correct answer
+                var actualValue = document.getElementById("actualValue").value;
+                //The computer's guessed Value
+                var guessValue;
+                //All of the computer's guesses formated in HTML
+                var guessesString = "";
+                //The computers count of guesses
+                var guessCount = 0;
+                
+                //Keep guessing while the computer has the wrong answer
+                while (guessValue != actualValue) {
+                    //Guess a new value
+                    guessValue = Math.floor(Math.random() * 6);
+                    guessCount++;   //Add one more guess to our total
+                    
+                    //Add our new guess to the computer's guesses
+                    guessesString = guessesString + "<p>" + "Guess #" + guessCount + ": " + guessValue + "</p>";
+                }
+                
+                 //Display how many guesses the computer took
+                document.getElementById("guessCount").innerHTML = guessCount;
+                //Display all the computer's guesses
+                document.getElementById("allGuesses").innerHTML = guessesString;
+               
+            }
+            
+        </script>
+    </body>
+</html>
