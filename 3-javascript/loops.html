@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Javascript</title>  
+    </head>
+    <body>
+        
+        <div id="tweets"></div>
+        
+        <script type="text/javascript">
+            
+            //Declare variable to hold HTML
+            //WARNING: if we don't declare it with empty quotes we get undefined to start with
+            var tweetString = "";
+            
+            //Declare array of tweets
+            var tweets = ["Hi everyone!", "I love cereal", "Night night :)", "Sweet Dreams!"];
+            
+            //Set tweet to the index of current tweet in tweets
+            for (tweet in tweets) {
+                //Set HTML to previous tweet(s) and add new tweet with HTML <p> tags
+                tweetString = tweetString + "<p>" + tweets[tweet] + "</p>";
+            }
+            
+            //Set HTML
+            document.getElementById("tweets").innerHTML = tweetString;
+            
+        </script>
+    </body>
+</html>
