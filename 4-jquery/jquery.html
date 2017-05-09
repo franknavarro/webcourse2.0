@@ -8,33 +8,26 @@
     </head>
     <body>
         
-        <p></p>
+        
         
         <script type="text/javascript">
             
-            //Gets contents from another file
-            /*$.get("info.txt", function(data) {
-                
-                alert(data);
-                
-            });*/
+            //Regex variable for what to look for
+            //Enclose what you want to search for in foward slashes
+            //  Append i at the end to make the search NOT case-sensitive
+            //  Append g at the end to seach for all instances
+            var regex = /e/g;
             
-            //Same as get but allows done and fail in case something goes wrong
-            /*$.ajax("inf.txt").done(function(data) {
-                alert(data);
-            }).fail(function(){
-                alert("Could not get data");
-            });*/
-            
-            
-            //AJAX only works on a server (use MAMP for localhost)
-            $.ajax("info.txt").done(function(data) {
-                $("p").html(data);
-            }).fail(function() {
-                $("p").html("Failed to load data...");
-            });
-            
+            var string = "Regex is great!";
 
+            //match is a jQuery function
+            //returns matched string if true
+            //  if false returns null
+            var result = string.match(regex);
+            
+            alert(result);
+            
+            
         </script>
         
     </body>
