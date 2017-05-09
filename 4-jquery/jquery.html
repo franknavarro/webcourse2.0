@@ -27,7 +27,7 @@
             });*/
             
             
-            
+            //AJAX only works on a server (use MAMP for localhost)
             $.ajax("info.txt").done(function(data) {
                 $("p").html(data);
             }).fail(function() {
