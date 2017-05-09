@@ -3,38 +3,33 @@
         <title>jQuery</title>
         <script src="jquery-3.2.1.min.js"></script>
         <style>
-            #inText {display: none;}
+            #circle {
+                height: 200px; width: 200px;
+                border-radius: 100%;
+                background-color: green;
+            }
         </style>
     </head>
     <body>
         
-        <p id="text">Some random text!</p>
-        <button id="toggle">Toggle Text</button>
+        <div id="circle"></div>
         
         <script type="text/javascript">
             
-            $("div").click(function() {
-                //You can use a call back function in the fadeOut function and many other jQuery functions
-                //The function called within the parameters will executed once the current function is finished
-                $(this).fadeOut("slow", function() {
-                    alert("Fade Out has Finished!");
+            $("#circle").click(function() {
+                
+                $(this).animate({
+                    width:"400px", 
+                    height:"400px",
+                    marginLeft:"100px",
+                    marginTop:"100px"
+                }, 2000, function() {
+                    
+                    $(this).css("background-color", "red");
+                    
                 });
-            })
-            
-            $("#fadeOut").click(function() {
-                $("#outText").fadeOut("slow");
-            })
-            $("#fadeIn").click(function() {
-                $("#inText").fadeIn("slow");
-            })
-            
-            $("#toggle").click(function() {
-                if ($("#text").css("display") == "none") {
-                    $("#text").fadeIn();
-                } else {
-                    $("#text").fadeOut();
-                }
-            })
+                
+            });
             
 
         </script>
