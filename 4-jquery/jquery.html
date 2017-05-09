@@ -1,18 +1,44 @@
 <html>
     <head>
         <title>jQuery</title>
-        <!--<script src="jquery-3.2.1.min.js"></script>-->
+        <script src="jquery-3.2.1.min.js"></script>
+        <style>
+            #circle {
+                background-color: green;
+                border-radius: 100%;
+                width: 200px; height: 200px;
+                margin: 10px;
+            }
+            .square {
+                background-color: red;
+                width: 200px; height: 200px;
+                margin: 10px;
+            }
+            
+        </style>
     </head>
     <body>
         
+        <div id="circle"></div>
+        <div class="square"></div>
+        <div class="square"></div>
         
         <script type="text/javascript">
-            //Check if jQuery is installed
-            if (typeof jQuery == "undefined") {
-                alert("jQuery is not installed!")
-            } else {
-                alert("jQuery is installed!")
-            }
+            
+            //Equivalent of document.getElementById("").onClick
+            $("#circle").click(function() {
+                alert("Circle was clicked!")
+            })
+            
+            //Can use it with classes as well
+            $(".square").click(function() {
+                alert("A square was clicked!")
+            })     
+            
+            //Can use it with element types as well
+            $("div").click(function() {
+                alert("A div was clicked!")
+            })  
         </script>
         
     </body>
