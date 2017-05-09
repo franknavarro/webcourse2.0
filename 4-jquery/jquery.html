@@ -1,34 +1,37 @@
 <html>
     <head>
-        <title>jQuery</title>
+        <title>AJAX</title>
         <script src="jquery-3.2.1.min.js"></script>
         <style>
-            #circle {
-                height: 200px; width: 200px;
-                border-radius: 100%;
-                background-color: green;
-            }
+            
         </style>
     </head>
     <body>
         
-        <div id="circle"></div>
+        <p></p>
         
         <script type="text/javascript">
             
-            $("#circle").click(function() {
+            //Gets contents from another file
+            /*$.get("info.txt", function(data) {
                 
-                $(this).animate({
-                    width:"400px", 
-                    height:"400px",
-                    marginLeft:"100px",
-                    marginTop:"100px"
-                }, 2000, function() {
-                    
-                    $(this).css("background-color", "red");
-                    
-                });
+                alert(data);
                 
+            });*/
+            
+            //Same as get but allows done and fail in case something goes wrong
+            /*$.ajax("inf.txt").done(function(data) {
+                alert(data);
+            }).fail(function(){
+                alert("Could not get data");
+            });*/
+            
+            
+            
+            $.ajax("info.txt").done(function(data) {
+                $("p").html(data);
+            }).fail(function() {
+                $("p").html("Failed to load data...");
             });
             
 
