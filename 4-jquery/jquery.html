@@ -10,30 +10,46 @@
                 margin: 10px;
             }
             
+            .square {
+                background-color: red;
+                width: 200px; height: 200px;
+                margin: 10px;
+            }
+            
         </style>
     </head>
     <body>
         
         <div id="circle"></div>
-        <p>This is some text...</p>
-        <iframe src="http://www.cnn.com"></iframe>
+        <div class="square"></div>
+        <div class="square"></div>
 
         
         <script type="text/javascript">
             
             //Equivalent of document.getElementById("").onClick
-            $("#circle").click(function() {
-                //Equivalent of "document.getElementById("").innerHTML =" but with html element instead of id
-                $("p").html("This text has changed!!!");
-                //Getting the contents within the html as well
-                alert($("p").html());
+            $("#newId").click(function() {
+                //Change styling of elements
+                $("#circle").css("width", "400px");
+                $("#circle").css("height", "400px");
+                $("#circle").css("background-color", "red");
+                
+                //Getting css properties of elements
+                alert($("#circle").css("background-color"));
+                alert($("body").css("width"));
             })
             
-            //Hovering over an element
-            $("#circle").hover(function() {
-                $("iframe").attr("src", "http://www.ecowebhosting.co.uk");
+            //this keyword select the exact element that called this function
+            //similar to self in Objective-C
+            $("div").click(function() {
+                $(this).css("display", "none");
+                
+                if($(this).attr("id") == "circle") {
+                    alert("You clicked a circle");
+                } else {
+                    alert("You clicked a square");
+                }
             })
-            
             
 
         </script>
