@@ -9,36 +9,33 @@
                 width: 200px; height: 200px;
                 margin: 10px;
             }
-            .square {
-                background-color: red;
-                width: 200px; height: 200px;
-                margin: 10px;
-            }
             
         </style>
     </head>
     <body>
         
         <div id="circle"></div>
-        <div class="square"></div>
-        <div class="square"></div>
+        <p>This is some text...</p>
+        <iframe src="http://www.cnn.com"></iframe>
+
         
         <script type="text/javascript">
             
             //Equivalent of document.getElementById("").onClick
             $("#circle").click(function() {
-                alert("Circle was clicked!")
+                //Equivalent of "document.getElementById("").innerHTML =" but with html element instead of id
+                $("p").html("This text has changed!!!");
+                //Getting the contents within the html as well
+                alert($("p").html());
             })
             
-            //Can use it with classes as well
-            $(".square").click(function() {
-                alert("A square was clicked!")
-            })     
+            //Hovering over an element
+            $("#circle").hover(function() {
+                $("iframe").attr("src", "http://www.ecowebhosting.co.uk");
+            })
             
-            //Can use it with element types as well
-            $("div").click(function() {
-                alert("A div was clicked!")
-            })  
+            
+
         </script>
         
     </body>
