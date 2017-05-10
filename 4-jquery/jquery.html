@@ -5,36 +5,41 @@
         <script src="jquery-ui/jquery-ui.js"></script>
         <link href="jquery-ui/jquery-ui.css" rel="stylesheet">
         <style>
-            #littleSquare {
-                background-color: blue;
-                width: 100px;
-                height: 100px;
-            }
-            #bigSquare {
-                background-color: red;
-                width: 250px;
-                height: 250px;
-                position: absolute;
-                top: 35%;
-                left: 35%;
-            }
+            
         </style>
     </head>
     <body>
         
-        <div id="bigSquare"></div>
-        <div id="littleSquare"></div>
+        
+        <div id="accordion">
+            <!-- One piece of the accordian -->
+            <!-- h3 is the title and then div under it is the content to be displayed -->
+            <h3>Section 1</h3>
+            <div>
+                <p>Hello There!!!!</p>
+            </div>
+            <!-------------------------------->
+            <h3>Section 2</h3>
+            <div>
+                <p>Peeka-Boo!!!!!!!!</p>
+            </div>
+            <h3>Section 3</h3>
+            <div>
+                <p>Now you see me....</p>
+            </div>
+        </div>
+        
+        <ul id="sortable">
+            <li>He was #1!!!</li>
+            <li>I AM #1</li>
+            <li>You all are last, before me!</li>
+            <li>I always come in last...</li>
+        </ul>
 
         <script type="text/javascript">
             
-            $("#littleSquare").draggable();
-            $("#bigSquare").droppable({
-                drop: function(event, ui) {
-                    alert("You dropped it!");
-                    console.log(event);
-                    console.log(ui);
-                }
-            });
+            $("#accordion").accordion();
+            $("#sortable").sortable();
             
         </script>
         
