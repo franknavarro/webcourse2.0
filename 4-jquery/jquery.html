@@ -1,32 +1,22 @@
 <html>
     <head>
-        <title>AJAX</title>
+        <title>jQuery UI</title>
         <script src="jquery-3.2.1.min.js"></script>
+        <script src="jquery-ui/jquery-ui.js"></script>
+        <link href="jquery-ui/jquery-ui.css" rel="stylesheet">
         <style>
             
         </style>
     </head>
     <body>
         
-        
+        <div id="draggable" class="ui-widget-content">
+            <p>Drag me around</p>
+        </div>
         
         <script type="text/javascript">
             
-            //Regex variable for what to look for
-            //Enclose what you want to search for in foward slashes
-            //  Append i at the end to make the search NOT case-sensitive
-            //  Append g at the end to seach for all instances
-            var regex = /e/g;
-            
-            var string = "Regex is great!";
-
-            //match is a jQuery function
-            //returns matched string if true
-            //  if false returns null
-            var result = string.match(regex);
-            
-            alert(result);
-            
+            $( "#draggable" ).draggable();
             
         </script>
         
